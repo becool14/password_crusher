@@ -18,8 +18,8 @@ from faker import Faker
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-from app.password_utils import SUPPORTED_ALGORITHMS, hash_password
-from config import DB_PATH
+from app.password_utils import hash_password
+from config import DB_PATH, SUPPORTED_ALGORITHMS
 
 
 faker = Faker("pl_PL")

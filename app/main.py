@@ -8,8 +8,8 @@ from flask import Flask, jsonify, request
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-from app.password_utils import SUPPORTED_ALGORITHMS, hash_password, verify_password
-from config import DB_PATH, LOCK_DURATION_MINUTES, MAX_FAILED_ATTEMPTS
+from app.password_utils import hash_password, verify_password
+from config import DB_PATH, LOCK_DURATION_MINUTES, MAX_FAILED_ATTEMPTS, SUPPORTED_ALGORITHMS
 
 
 app = Flask(__name__)

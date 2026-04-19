@@ -6,3 +6,6 @@ DB_PATH = BASE_DIR / "data" / "users.db"
 
 MAX_FAILED_ATTEMPTS = 5
 LOCK_DURATION_MINUTES = 5
+
+SUPPORTED_ALGORITHMS = {"md5", "sha1", "sha256", "pbkdf2_sha256", "scrypt", "bcrypt", "argon2id"}
+WEAK_ALGORITHMS = {"md5", "sha1", "sha256"}
