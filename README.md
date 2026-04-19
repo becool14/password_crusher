@@ -4,8 +4,6 @@ Temat: **Heszowanie hasel i odpornosc na ataki offline**.
 
 ## Struktura
 
-- `RAPORT_CZESC_PRAKTYCZNA.md` - gotowy raport po polsku
-- `SZABLONY_WYNIKOW_I_ANALIZY.md` - tabela i opis analizy do uzupelnienia
 - `app/main.py` - testowa aplikacja Flask (register/login)
 - `app/password_utils.py` - haszowanie i weryfikacja (AlgorithmSpec, registry)
 - `config.py` - konfiguracja aplikacji (DB_PATH, SUPPORTED_ALGORITHMS, itp.)
