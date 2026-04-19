@@ -1,9 +1,12 @@
+import sys
 from pathlib import Path
 import sqlite3
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "users.db"
+sys.path.insert(0, str(BASE_DIR))
+
+from config import DB_PATH
+
 OUT_DIR = BASE_DIR / "hashes"
 
 
@@ -12,9 +15,9 @@ def export() -> None:
     with sqlite3.connect(DB_PATH) as conn:
         rows = conn.execute("SELECT username, algo, password_hash FROM users ORDER BY id").fetchall()
 
-    grouped = {"sha256": [], "bcrypt": [], "argon2id": []}
+    grouped: dict[str, list] = {}
     for username, algo, password_hash in rows:
-        grouped[algo].append((username, password_hash))
+        grouped.setdefault(algo, []).append((username, password_hash))
 
     for algo, items in grouped.items():
         file_path = OUT_DIR / f"{algo}.txt"
